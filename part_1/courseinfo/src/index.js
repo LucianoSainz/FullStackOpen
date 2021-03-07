@@ -1,6 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+const Header = (props) => {
+  return(
+     <>
+     <h1>{props.course}</h1>
+     </>
+  )
+}
+
 const App = () => {
   const course = {
     name: 'Half Stack application development',
