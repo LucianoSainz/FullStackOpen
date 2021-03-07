@@ -9,6 +9,14 @@ const Header = (props) => {
   )
 }
 
+const  Part = (props) => {
+  return(
+     <>
+     <p>{props.course.name} {props.course.exercises}</p>
+     </>
+  )
+}
+
 const App = () => {
   const course = {
     name: 'Half Stack application development',
