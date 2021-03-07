@@ -17,6 +17,16 @@ const  Part = (props) => {
   )
 }
 
+const Contet = (props) => {
+  return(
+    <>
+     <Part content = {props.content[0]} />
+     <Part content = {props.content[1]} />
+     <Part content = {props.content[2]} />
+    </>
+  )
+}
+
 const App = () => {
   const course = {
     name: 'Half Stack application development',
