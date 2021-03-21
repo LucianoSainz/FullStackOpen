@@ -3,31 +3,34 @@ import ReactDOM from 'react-dom';
 
 
 const Statistics = (props) => {
-  if(props.suma === 0 && props.title === true) {
+  if(props.sum === 0 && props.title === true) {
     return(
        <tr>
          <td>No comments provided</td>
-       </tr>
+       </tr> 
     )
   }
-  if(props.suma === 0){
+
+  if(props.sum === 0){
     return(
       <tr>
         <td></td>
       </tr>
     )
   }
+  
   return(
     <tr>
-      <td>{props.name} {props.val}
-      </td>
+      <td>{props.name} {props.val}</td>
     </tr>
   )
 }
 
 
 const Button = ({handleClick, text}) => (
-  <button onClick={handleClick}>{text}</button>
+  <button onClick={handleClick}>
+    {text}
+    </button>
 )
 
 const App = () => {
@@ -60,12 +63,14 @@ const App = () => {
     <h2>Statistics</h2>
     <table>
       <tbody>
-    <Statistics text={true} suma={good + bad + neutral} />
-    <Statistics text="good" value ={good + bad + neutral} val={good} />
-    <Statistics text="neutral" value ={good + bad + neutral} val={neutral} />
-    <Statistics text="bad" value ={good + bad + neutral} val={bad} />
+    <Statistics title={true} sum={good + bad + neutral} />
+    <Statistics name="Good" sum={good + bad + neutral} val={good} />
+    <Statistics name="Neutral" sum={good + bad + neutral} val={neutral} />
+    <Statistics name="Bad" sum={good + bad + neutral} val={bad} />
 
-   
+    <Statistics name='Average' sum={good + bad + neutral} val={(good + bad)/(good + bad + neutral)} />
+    <Statistics name='positive' sum={good + bad + neutral} val={(good)/(good + bad + neutral)*100} />
+    
       </tbody>
     </table>  
       </div>
