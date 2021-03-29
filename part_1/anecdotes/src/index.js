@@ -11,6 +11,9 @@ const App = (props) => {
     <div>
       <h2>Anecdotes of the day</h2>
       {props.anecdotes[selected]}
+      <br />
+      <Button handleClick={} text="next anecdotes" />
+      <Button handleClick={} text="vote" />
     </div>
   )
 }
