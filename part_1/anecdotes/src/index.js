@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 
-
+const Button =({handleClick, text}) => {
+  <button onClick={handleClick}>{text}</button>
+}
 const App = (props) => {
   const[selected, setSelected] = useState(0);
 
   return (
     <div>
+      <h2>Anecdotes of the day</h2>
       {props.anecdotes[selected]}
     </div>
   )
