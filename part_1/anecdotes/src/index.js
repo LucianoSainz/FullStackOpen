@@ -11,12 +11,21 @@ const App = (props) => {
      setSelected(Math.floor(Math.random() * anecdotes.length));
   }
 
+  const handleVote = () => {
+    const copy = {...points};
+    copy[selected] += 1;
+    setPoints(copy);
+    if(points[selected] > poits[mostVoted]){
+      setMostVoted(selected);
+    }
+  }
+
   return (
     <div>
       <h2>Anecdotes of the day</h2>
       {props.anecdotes[selected]}
       <br />
-      <Button handleClick={} text="next anecdotes" />
+      <Button handleClick={handleSelected} text="next anecdotes" />
       <Button handleClick={} text="vote" />
     </div>
   )
