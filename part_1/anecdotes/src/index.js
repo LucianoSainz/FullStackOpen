@@ -7,6 +7,10 @@ const Button =({handleClick, text}) => {
 const App = (props) => {
   const[selected, setSelected] = useState(0);
 
+  const handleSelected = () => {
+     setSelected(Math.floor(Math.random() * anecdotes.length));
+  }
+
   return (
     <div>
       <h2>Anecdotes of the day</h2>
