@@ -17,7 +17,7 @@ const App = (props) => {
     const copy = {...points};
     copy[selected] += 1;
     setPoints(copy);
-    if(points[selected] > poits[mostVoted]){
+    if(points[selected] > points[mostVoted]){
       setMostVoted(selected);
     }
   }
@@ -27,11 +27,13 @@ const App = (props) => {
       <h2>Anecdotes of the day</h2>
       {props.anecdotes[selected]}
       <br />
+      has {points[selected]} points
+   
       <Button handleClick={handleSelected} text="next anecdotes" />
       <Button handleClick={handleVote} text="vote" />
       <br />
       <h2>Anecdotes with most votes</h2>
-      
+      {props.anecdotes[mostVoted]}
     </div>
   )
 }
@@ -48,8 +50,7 @@ const anecdotes = [
 
 
 ReactDOM.render(
-    <App  anecdotes={anecdotes} />,
-  document.getElementById('root')
+    <App anecdotes={anecdotes} />, document.getElementById('root')
 );
 
 
