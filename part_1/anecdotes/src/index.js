@@ -28,7 +28,10 @@ const App = (props) => {
       {props.anecdotes[selected]}
       <br />
       <Button handleClick={handleSelected} text="next anecdotes" />
-      <Button handleClick={} text="vote" />
+      <Button handleClick={handleVote} text="vote" />
+      <br />
+      <h2>Anecdotes with most votes</h2>
+      
     </div>
   )
 }
