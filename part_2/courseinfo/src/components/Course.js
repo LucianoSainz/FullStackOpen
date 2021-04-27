@@ -6,6 +6,13 @@ const Header = props => {
      
 }
 
+const Total = (props) => {
+    const parts = props.course.parts.map(course => course.exercises)
+    return(
+        <p>there are in total {parts.reducer((s, p) => s + p)}</p>
+    )
+}
+
 const Content = () => {
 
 }
