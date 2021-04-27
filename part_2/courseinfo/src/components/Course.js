@@ -17,7 +17,8 @@ const Content = () => {
 
 }
 
-const Part = () => {
+const Part = props => {
+    <p>{props.name} {props.exercises}</p>
 
 }
 
